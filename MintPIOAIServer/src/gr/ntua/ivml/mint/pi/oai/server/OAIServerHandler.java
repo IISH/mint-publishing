@@ -176,7 +176,7 @@ public class OAIServerHandler implements Iface {
 			String projectName, int datasetId) throws TException {
 		
 		BasicDBObject query = new BasicDBObject();
-		query.put("datasetId", datasetId);
+		query.put("sourceDatasetId", datasetId);
 		query.put("isPublished", true);
 		int number = MongoDB.getDB().getCollection(extractProjectFromTopic(projectName)).find(query).count();
 		if(number > 0){
