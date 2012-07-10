@@ -180,9 +180,11 @@ public class OAIServerHandler implements Iface {
 		query.put("isPublished", true);
 		int number = MongoDB.getDB().getCollection(extractProjectFromTopic(projectName)).find(query).count();
 		if(number > 0){
-			BasicDBObject updateQuery = new BasicDBObject();
+			MongoDB.getDB().getCollection(extractProjectFromTopic(projectName)).remove(query);
+			/*BasicDBObject updateQuery = new BasicDBObject();
 			updateQuery.put("$set", new BasicDBObject("isPublished",false));
 			MongoDB.getDB().getCollection(extractProjectFromTopic(projectName)).update(query, updateQuery, false, true);
+			*/
 		}
 		BasicDBObject report = new BasicDBObject();
 		report.put("userId", userId);
