@@ -39,6 +39,15 @@ public class OAIServiceClient {
 		}
 	}
 	
+	public void unpublishRecordsByOrgId(int orgId,
+			String projectName){
+		try {
+			client.unpublishRecordsByOrgId(orgId, -1, projectName);
+			
+		} catch (TException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public String createReport(String projectName, int userId, int orgId, ArrayList<Integer> datasets){
 		String res = null;

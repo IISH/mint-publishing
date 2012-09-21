@@ -166,7 +166,17 @@ public class OAIServerHandler implements Iface {
 	@Override
 	public void unpublishRecordsByOrgId(int orgId, int userId,
 			String projectName) throws TException {
-		// TODO Auto-generated method stub
+		BasicDBObject query = new BasicDBObject();
+		query.put("orgId", orgId);
+		query.put("isPublished", true);
+		int number = MongoDB.getDB().getCollection(extractProjectFromTopic(projectName)).find(query).count();
+		if(number > 0){
+			MongoDB.getDB().getCollection(extractProjectFromTopic(projectName)).remove(query);
+			/*BasicDBObject updateQuery = new BasicDBObject();
+			updateQuery.put("$set", new BasicDBObject("isPublished",false));
+			MongoDB.getDB().getCollection(extractProjectFromTopic(projectName)).update(query, updateQuery, false, true);
+			*/
+		}
 		
 	}
 
