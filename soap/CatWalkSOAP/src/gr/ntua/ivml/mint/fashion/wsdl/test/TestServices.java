@@ -43,13 +43,10 @@ public class TestServices {
 	private static CatwalkWebservicePortTypeProxy prox;
 	
 	private static FTPClient client;
-	
-	private static String imagePath = "/data/vardata/tmp/cpard/22-05-2014/images/";
-	private static String metadataPath = "/data/vardata/tmp/cpard/22-05-2014/metadata/";
-	private static String aggregatedMetadataPath = "/data/vardata/tmp/cpard/22-05-2014/aggregated/";
-//	private static String imagePath = "C:\\data\\fashion\\test\\images\\";
-//	private static String metadataPath = "C:\\data\\fashion\\test\\metadata\\";
-//	private static String aggregatedMetadataPath = "C:\\data\\fashion\\test\\aggregated\\";
+	private static String baseDir = "/data/vardata/tmp/arne/Catwalk-27-06-2014/";
+	private static String imagePath = baseDir + "images/";
+	private static String metadataPath = baseDir + "metadata/";
+	private static String aggregatedMetadataPath = baseDir + "aggregated/";
 	private static String finalURL = "http://repos.europeanafashion.eu/catwalk/";
 	public TestServices() throws JAXBException, IllegalStateException, IOException, FTPIllegalReplyException, FTPException{
 
