@@ -5,7 +5,6 @@ import gr.ntua.ivml.fashion.catwalk.schema.CatWalk.Record;
 import gr.ntua.ivml.fashion.catwalk.schema.CategoryType;
 import gr.ntua.ivml.fashion.catwalk.schema.ObjectFactory;
 import gr.ntua.ivml.fashion.catwalk.schema.PictureType;
-
 import it.sauronsoftware.ftp4j.FTPAbortedException;
 import it.sauronsoftware.ftp4j.FTPClient;
 import it.sauronsoftware.ftp4j.FTPDataTransferException;
@@ -27,6 +26,7 @@ import javax.xml.bind.Marshaller;
 
 import org.apache.axis.AxisFault;
 import org.apache.axis.client.Stub;
+import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 
 import wsdl.catwalk.Category;
@@ -65,6 +65,32 @@ public class TestServices {
 	 */
 	
 	public static void main(String[] args) throws JAXBException, MalformedURLException, IOException, IllegalStateException, FTPIllegalReplyException, FTPException, FTPDataTransferException, FTPAbortedException {
+
+		if( args.length == 0 ) {
+			System.out.println( "Please provide a target directory. ");
+			System.exit( 1 );
+		}
+		
+		File dir = new File( args[0]);
+		if( !(dir.canWrite() && dir.isDirectory())) {
+			System.out.println( dir.getAbsolutePath() + " either doesn't exist or isn't writeable.");
+			System.exit( 1 );
+		}
+
+		SimpleDateFormat sdf=  new SimpleDateFormat("yyyy-MM-dd");
+		String base = "Catwalk-"+sdf.format(new Date());
+		
+		dir = new File( dir, base );
+		if( dir.exists()) {
+			FileUtils.deleteDirectory(dir);
+		} else {
+			dir.mkdir();
+		}
+		baseDir = dir.getAbsolutePath();
+		imagePath = baseDir + "images/";
+		metadataPath = baseDir + "metadata/";
+		aggregatedMetadataPath = baseDir + "aggregated/";
+		
 //		CatwalkWebserviceBindingStub stub = new CatwalkWebserviceBindingStub();
 //		stub._setProperty(stub.USERNAME_PROPERTY, "Henk_Soap");
 //		stub._setProperty(stub.PASSWORD_PROPERTY, "hZ2AtIdWoG");
