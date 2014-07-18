@@ -86,10 +86,15 @@ public class TestServices {
 		} else {
 			dir.mkdir();
 		}
+		
+		new File( dir, "images").mkdir();
+		new File( dir, "metadata").mkdir();
+		new File( dir, "aggregated").mkdir();
+		
 		baseDir = dir.getAbsolutePath();
-		imagePath = baseDir + "images/";
-		metadataPath = baseDir + "metadata/";
-		aggregatedMetadataPath = baseDir + "aggregated/";
+		imagePath = baseDir + "/images/";
+		metadataPath = baseDir + "/metadata/";
+		aggregatedMetadataPath = baseDir + "/aggregated/";
 		
 //		CatwalkWebserviceBindingStub stub = new CatwalkWebserviceBindingStub();
 //		stub._setProperty(stub.USERNAME_PROPERTY, "Henk_Soap");
