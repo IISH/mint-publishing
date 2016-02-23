@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-6-oracle"/>
 	<classpathentry kind="lib" path="lib/commons-lang-2.5.jar"/>
-	<classpathentry kind="lib" path="lib/httpclient-4.1.2.jar"/>
 	<classpathentry kind="lib" path="lib/httpcore-4.1.3.jar"/>
 	<classpathentry kind="lib" path="lib/libthrift-0.8.0.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
@@ -11,5 +10,40 @@
 	<classpathentry kind="lib" path="lib/slf4j-api-1.5.8.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.5.8.jar"/>
 	<classpathentry kind="lib" path="lib/mongo-2.7.3.jar"/>
+	<classpathentry kind="lib" path="lib"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/commons-logging-api-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/elasticsearch-0.90.1.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/httpclient-4.2.5.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/httpclient-cache-4.2.5.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/httpcore-4.1.3.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/httpcore-4.2.4.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/httpmime-4.2.5.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/jna-3.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/jts-1.12.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/libthrift-0.8.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-analyzers-common-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-codecs-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-core-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-grouping-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-highlighter-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-join-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-memory-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-queries-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-queryparser-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-sandbox-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-spatial-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/lucene-suggest-4.3.0.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/mongo-2.7.3.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/mongo-2.9.1.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/home/costas/git/mintpublishing/MintPIOAIServer/lib/spatial4j-0.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-cache-4.2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
