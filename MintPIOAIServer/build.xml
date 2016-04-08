@@ -5,6 +5,7 @@
     <property name="lib-dir" value="lib"/>
     <property name="jar-dir" value="${build-dir}/jar"/>
     <property name="main-class" value="gr.ntua.ivml.mint.pi.oai.server.OAIService"/>
+    <property name="version" value="1.0"/>
 
     <path id="classpath">
         <fileset dir="${lib-dir}" includes="**/*.jar"/>
@@ -30,7 +31,7 @@
     </target>
 
     <target name="jar" depends="compile">
-        <jar destfile="${jar-dir}/${ant.project.name}.jar" basedir="${classes-dir}">
+        <jar destfile="${jar-dir}/${ant.project.name}-${version}.jar" basedir="${classes-dir}">
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
             </manifest>
