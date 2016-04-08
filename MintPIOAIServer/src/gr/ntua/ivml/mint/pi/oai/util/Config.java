@@ -1,18 +1,7 @@
 package gr.ntua.ivml.mint.pi.oai.util;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.Properties;
-
-import javax.servlet.ServletContext;
-
-import org.apache.log4j.Logger;
 
 public class Config {
 	public final static String PROPERTIES = "pi.properties";
@@ -59,17 +48,34 @@ public class Config {
 	private static void checkAndRead() {
 		readProperties();
 	}
-	
+
+	/**
+	 * readProperties
+	 *
+	 * Read the properties from a file or else use the default from the classpath.
+	 */
 	private static void readProperties() {
-	    try {
-	    		InputStream inputStream = Config.class.getClassLoader().getResourceAsStream(PROPERTIES);
-	    		if(inputStream == null) {
-	    			System.err.println(PROPERTIES + " not loaded");
-	    		}
-	        properties.load(inputStream);
-	    } catch(Exception e) {
-	    		throw new Error( "Configuration file " + PROPERTIES + " not found in CLASSPATH", e);
-	    }
+
+		final String file = System.getProperty(PROPERTIES);
+		if ( file == null ) {
+			try {
+				final InputStream inputStream = Config.class.getClassLoader().getResourceAsStream(PROPERTIES);
+				if(inputStream == null) {
+					System.err.println(PROPERTIES + " not loaded");
+				}
+				properties.load(inputStream);
+			} catch(Exception e) {
+				throw new Error( "Configuration file " + PROPERTIES + " not found in CLASSPATH", e);
+			}
+		} else {
+			try {
+				final InputStream inputStream = new FileInputStream(file);
+				properties.load(inputStream);
+			} catch (IOException e) {
+				throw new Error( "Configuration file " + file + " not loaded.", e);
+			}
+		}
+
 	}
 
 	private static String[] decomposeJsonQuery(String query){return query.split("\\.");}
