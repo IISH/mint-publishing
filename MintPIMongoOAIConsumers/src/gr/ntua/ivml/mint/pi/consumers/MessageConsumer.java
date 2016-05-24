@@ -1,6 +1,10 @@
 package gr.ntua.ivml.mint.pi.consumers;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.thrift.TDeserializer;
 import org.apache.thrift.TException;
@@ -29,7 +33,15 @@ public class MessageConsumer implements Runnable{
 	
 	public MessageConsumer(){
 		factory = new ConnectionFactory();
-		factory.setHost(Config.get("queue.host"));
+		try {
+			factory.setUri(Config.get("queue.host"));
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
+			e.printStackTrace();
+		}
 		classLoader = MessageConsumer.class.getClassLoader();
 		context = new MessageProcessingContext();
 		td = new TDeserializer();
@@ -53,6 +65,8 @@ public class MessageConsumer implements Runnable{
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (TimeoutException e) {
 			e.printStackTrace();
 		}
 	}

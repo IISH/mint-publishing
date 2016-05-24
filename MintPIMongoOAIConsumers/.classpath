@@ -12,7 +12,7 @@
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.5.8.jar"/>
 	<classpathentry kind="lib" path="lib/commons-cli-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/commons-io-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/rabbitmq-client.jar"/>
+	<classpathentry kind="lib" path="lib/amqp-client-jar-3.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/mongo-2.7.3.jar"/>
 	<classpathentry kind="lib" path="lib/httpclient-4.1.2.jar"/>
 	<classpathentry kind="lib" path="lib/nux.jar"/>
